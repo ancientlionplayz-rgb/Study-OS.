@@ -14,3 +14,7 @@ test/.routine-dist/
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+
+backup_*.zip
+
+supabase/.temp/
