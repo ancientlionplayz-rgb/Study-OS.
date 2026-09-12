@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": "..",
+    "outDir": ".storage-dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["ES2020", "DOM"]
+  },
+  "include": [
+    "../src/types/index.ts",
+    "../src/lib/constants.ts",
+    "../src/lib/storage/repository.ts",
+    "../src/lib/storage/localStorageRepo.ts"
+  ]
+}

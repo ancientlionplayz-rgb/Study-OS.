@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Canvas & Surfaces */
+  --background: #F8FAFC;         /* Light cool canvas slate-50 */
+  --bg-page: var(--background);
+  --surface: #FFFFFF;            /* Pure white card surface */
+  --bg-surface: var(--surface);
+  --surface-muted: #F1F5F9;      /* Subtle tinted surface slate-100 */
+  --bg-surface-soft: var(--surface-muted);
+  --surface-elevated: #FFFFFF;   /* Modal / Popover elevated surface */
+  --bg-elevated: var(--surface-elevated);
+
+  /* Typography (WCAG AA High Contrast) */
+  --text-primary: #0F172A;       /* Deep high-contrast slate-900 */
+  --text-secondary: #334155;     /* Readable body slate-700 */
+  --text-muted: #64748B;         /* Accessible secondary caption slate-500 */
+  --text-inverse: #FFFFFF;       /* High-contrast inverted text */
+
+  /* Borders & Dividers */
+  --border: #E2E8F0;             /* Clean divider slate-200 */
+  --border-default: var(--border);
+  --border-strong: #CBD5E1;      /* High-emphasis border slate-300 */
+
+  /* Primary Brand (Blue / Indigo) */
+  --primary: #4F46E5;            /* Indigo-600 */
+  --primary-hover: #4338CA;      /* Indigo-700 */
+  --primary-foreground: #FFFFFF; /* High-contrast white */
+  --primary-light: #EEF2FF;      /* Indigo-50 */
+  --primary-soft: var(--primary-light);
+  --primary-border: #C7D2FE;     /* Indigo-200 */
+  --primary-text: #4338CA;       /* Deep Indigo text */
+
+  /* Accent (Cyan / Sky) */
+  --accent: #0284C7;             /* Sky-600 */
+  --accent-light: #F0F9FF;       /* Sky-50 */
+
+  /* Success (Green / Emerald) */
+  --success: #16A34A;            /* Emerald-600 */
+  --success-foreground: #FFFFFF;
+  --success-light: #F0FDF4;      /* Green-50 */
+  --success-soft: var(--success-light);
+  --success-border: #BBF7D0;     /* Green-200 */
+  --success-text: #15803D;       /* Green-700 */
+
+  /* Warning (Amber) */
+  --warning: #D97706;            /* Amber-600 */
+  --warning-foreground: #FFFFFF;
+  --warning-light: #FFFBEB;      /* Amber-50 */
+  --warning-soft: var(--warning-light);
+  --warning-border: #FDE68A;     /* Amber-200 */
+  --warning-text: #B45309;       /* Amber-700 */
+
+  /* Danger / Error (Rose / Red) */
+  --danger: #E11D48;             /* Rose-600 */
+  --danger-foreground: #FFFFFF;
+  --danger-light: #FFF1F2;       /* Rose-50 */
+  --danger-soft: var(--danger-light);
+  --danger-border: #FECDD3;      /* Rose-200 */
+  --danger-text: #BE123C;        /* Rose-700 */
+
+  /* Info / Doubts (Purple / Violet) */
+  --info: #7C3AED;               /* Violet-600 */
+  --info-foreground: #FFFFFF;
+  --info-light: #F5F3FF;         /* Violet-50 */
+  --info-soft: var(--info-light);
+  --info-border: #DDD6FE;        /* Violet-200 */
+  --info-text: #6D28D9;          /* Violet-700 */
+}
+
+.dark {
+  /* Canvas & Surfaces */
+  --background: #070B12;
+  --bg-page: var(--background);
+  --surface: #0E1626;
+  --bg-surface: var(--surface);
+  --surface-muted: #141F36;
+  --bg-surface-soft: var(--surface-muted);
+  --surface-elevated: #111C30;
+  --bg-elevated: var(--surface-elevated);
+
+  /* Typography */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #0F172A;
+
+  /* Borders */
+  --border: #1E293B;
+  --border-default: var(--border);
+  --border-strong: #334155;
+
+  /* Primary Brand */
+  --primary: #6366F1;
+  --primary-hover: #4F46E5;
+  --primary-foreground: #FFFFFF;
+  --primary-light: rgba(99, 102, 241, 0.15);
+  --primary-soft: var(--primary-light);
+  --primary-border: rgba(99, 102, 241, 0.35);
+  --primary-text: #A5B4FC;
+
+  /* Success */
+  --success: #22C55E;
+  --success-foreground: #FFFFFF;
+  --success-light: rgba(34, 197, 94, 0.15);
+  --success-soft: var(--success-light);
+  --success-border: rgba(34, 197, 94, 0.35);
+  --success-text: #4ADE80;
+
+  /* Warning */
+  --warning: #F59E0B;
+  --warning-foreground: #FFFFFF;
+  --warning-light: rgba(245, 158, 11, 0.15);
+  --warning-soft: var(--warning-light);
+  --warning-border: rgba(245, 158, 11, 0.35);
+  --warning-text: #FBBF24;
+
+  /* Danger */
+  --danger: #F43F5E;
+  --danger-foreground: #FFFFFF;
+  --danger-light: rgba(244, 63, 94, 0.15);
+  --danger-soft: var(--danger-light);
+  --danger-border: rgba(244, 63, 94, 0.35);
+  --danger-text: #FB7185;
+
+  /* Info */
+  --info: #A855F7;
+  --info-foreground: #FFFFFF;
+  --info-light: rgba(168, 85, 247, 0.15);
+  --info-soft: var(--info-light);
+  --info-border: rgba(168, 85, 247, 0.35);
+  --info-text: #C084FC;
+}
+
+/* ====================================================
+   DASHBOARD THEME TEMPLATES
+   1. Focus Light: Clean productivity, crisp indigo/blue
+   2. Athletic Performance: Energetic emerald & bold contrast
+   3. Tech / AI: Modern cyan & violet hybrid
+   4. Calm Study: Warm soothing stone & amber
+   ==================================================== */
+
+[data-theme="focus-light"] {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --surface-muted: #F1F5F9;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #EEF2FF;
+  --primary-border: #C7D2FE;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
+}
+
+[data-theme="athletic"] {
+  --background: #F4F6F8;
+  --surface: #FFFFFF;
+  --surface-muted: #E9ECEF;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #111827;
+  --text-secondary: #1F2937;
+  --text-muted: #4B5563;
+  --primary: #059669; /* Emerald 600 */
+  --primary-hover: #047857;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #ECFDF5;
+  --primary-border: #A7F3D0;
+  --border: #D1D5DB;
+  --border-strong: #9CA3AF;
+  --accent: #D97706; /* Athletic gold accent */
+}
+
+[data-theme="tech-ai"] {
+  --background: #F0F4F8;
+  --surface: #FFFFFF;
+  --surface-muted: #E2E8F0;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #0B132B;
+  --text-secondary: #1C2541;
+  --text-muted: #475569;
+  --primary: #0284C7; /* Sky / Cyan 600 */
+  --primary-hover: #0369A1;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #F0F9FF;
+  --primary-border: #BAE6FD;
+  --border: #CBD5E1;
+  --border-strong: #94A3B8;
+  --info: #8B5CF6; /* Violet */
+}
+
+[data-theme="calm-study"] {
+  --background: #FAF8F5; /* Warm cream */
+  --surface: #FFFFFF;
+  --surface-muted: #F3EFEA;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #292524; /* Warm stone-800 */
+  --text-secondary: #44403C; /* Warm stone-700 */
+  --text-muted: #78716C; /* Warm stone-500 */
+  --primary: #B45309; /* Warm Amber / Bronze */
+  --primary-hover: #92400E;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #FEF3C7;
+  --primary-border: #FDE68A;
+  --border: #E7E5E4;
+  --border-strong: #D6D3D1;
+}
+
+/* Micro-interaction & Animation Utilities */
+.btn-interactive {
+  transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-interactive:hover {
+  transform: translateY(-1px);
+}
+.btn-interactive:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.card-interactive {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.card-interactive:hover {
+  transform: translateY(-1.5px);
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Bright modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
